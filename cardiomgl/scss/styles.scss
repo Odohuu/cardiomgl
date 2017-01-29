@@ -6,7 +6,9 @@ $old_green: #5d7a62;
 
 //grid
 $screen_large: 1110px;
-
+$screen_small: 960px;
+$tablet: 720px;
+$mobile:  480px;
 //base
 html,body{
     height: 100%;
@@ -33,13 +35,19 @@ a{
 }
 ul,li{
     list-style-type: none;
+    padding: 0;
 }
 /*grid*/
 .container{
-    width: $screen_large;
+    /*width: $screen_large;*/
     margin: 0 auto;
     overflow: hidden;
 }
+.row{
+    clear: left;
+}
+
+
 
 /*header*/
 .header{
@@ -47,13 +55,16 @@ ul,li{
     height: 80px;
     .logo{
         float: left;
-        width: $screen_large/5;
+        /*width: $screen_large/5;*/
         margin: 5px 20px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
     .main_nav{
         float: left;
-        width: $screen_large/1.6;
-        margin: 12px 0;
+        margin: 10px 0 10px 20px;
         ul li{
             display: inline-block;
             margin: 0 15px;
@@ -71,7 +82,7 @@ ul,li{
     }
     .search{
         float: right;
-        width: $screen_large/10;
+        /*width: $screen_large/10;*/
         a{
             display: block;
             float: right;
@@ -120,7 +131,6 @@ ul,li{
             color: $old_green;
         }
         .home_title a{
-            font-size: 18px;
             font-weight: 700;
             font-style: italic;
             color: black;
@@ -168,7 +178,6 @@ ul,li{
             color: $old_green;
         }
         .home_title a{
-            font-size: 18px;
             font-weight: 700;
             font-style: italic;
             color: black;
@@ -234,5 +243,173 @@ ul,li{
         background-image: url("../images/article_footer.png");
         background-repeat: no-repeat;
         background-position: center;
+    }
+}
+.sidenav{
+    display: none;
+}
+.open_nav{
+    display: none;
+}
+
+/*responsive*/
+@media screen and (min-width: 1367px) {
+    .container {
+        width: $screen_large;
+    }
+    .info .home_title a{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .container {
+        width: $screen_small;
+    }
+    .header .main_nav ul li a{
+        font-size: 18px;
+    }
+    .feature_article{
+        width: 370px;
+        height: 278px;
+        margin: 0 17px 17px 0;
+    }
+    .new_article{
+        width: 278px;
+        height: 278px;
+        margin: 0 17px 17px 0;
+    }
+    .info .home_title a{
+        font-size: 17px;
+    }
+    .end{
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .container {
+        width: $tablet;
+    }
+    .header{
+        height: 62px;
+    }
+    .header .logo a{
+        display: block;
+        width: 140px;
+    }
+    .header .logo{
+        margin: 5px 10px;
+    }
+    .header .main_nav ul li a{
+        font-size: 16px;
+    }
+    .header .main_nav ul li{
+        margin: 0 8px;
+    }
+    .header .main_nav{
+        margin: 2px 0;
+    }
+    .header .search a{
+        width: 62px;
+        height: 62px;
+    }
+    .header .search a img {
+        margin: 17px 18px;
+    }
+
+    .feature_article{
+        width: 278px;
+        height: 100%;
+        margin: 0 12px 12px 0;
+    }
+    .new_article{
+        width: 209px;
+        height: 100%;
+        margin: 0 12px 12px 0;
+    }
+    .info .home_title a{
+        font-size: 16px;
+    }
+    .end{
+        margin-right: 0;
+    }
+    .footer .footer_nav ul li{
+        margin: 0 15px;
+    }
+    .footer .footer_nav ul li a{
+        font-size: 15px;
+    }
+    .footer_nav{
+        height: 60px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .container{
+        width: $mobile;
+    }
+    .main_nav{
+        display: none;
+    }
+    .main{
+        margin: 20px 15px;
+    }
+    .feature_article{
+        width: 100%;
+        margin: 0 0 12px 0;
+    }
+    .new_article{
+        width: 234px;
+    }
+    .footer{
+        float: left;
+    }
+    .open_nav{
+        display: block;
+        font-size: 40px;
+        cursor: pointer;
+        float: left;
+        color: white;
+        margin: 0 6px;
+    }
+    .sidenav {
+        display: block;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 5px 5px 5px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #818181;
+        display: block;
+        transition: 0.3s
+    }
+
+    .sidenav a:hover, .offcanvas a:focus{
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    #main {
+        transition: margin-left .5s;
+        padding: 16px;
     }
 }

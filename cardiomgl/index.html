@@ -5,6 +5,7 @@
 	<meta name="description" content="Cardiology website">
 	<meta name="keywords" content="Cardiomgl, Cardiology, Medicine">
 	<meta name="author" content="Ts.Odhuu">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Cardiomgl website</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 
@@ -12,8 +13,17 @@
 <body>
 	<header class="header">
 		<div class="container">
+			<span class="open_nav" onclick="openNav()">&#9776;</span>
 			<div class="logo">
 				<a href="#"><img src="images/cardiomgl_logo.png" alt="cardiomgl logo"></a>
+			</div>
+			<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<a href="#">Нүүр</a>
+				<a href="#">Өвчин эмгэг</a>
+				<a href="#">Ном товхимол</a>
+				<a href="#">Хоол хүнс</a>
+				<a href="#">Эрүүл амьдрал</a>
 			</div>
 			<nav class="main_nav">
 				<ul>
@@ -110,7 +120,7 @@
 			<div class="twitter"></div>
 		</div>
 	</main>
-	<footer>
+	<footer class="footer">
 		<nav class="footer_nav">
 			<div class="container">
 				<ul>
@@ -125,5 +135,18 @@
 			<span>Cardiogml вэб хуудаснаас мэдээ зөвшөөрөлгүйгээр хуулбарлан мэдээлэл болгон түгээхийг хориглоно. 2016 он</span>
 		</div>
 	</footer>
+	<script>
+		function openNav() {
+		    document.getElementById("mySidenav").style.width = "250px";
+		    document.getElementById("main").style.marginLeft = "250px";
+		    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+		}
+
+		function closeNav() {
+		    document.getElementById("mySidenav").style.width = "0";
+		    document.getElementById("main").style.marginLeft= "0";
+		    document.body.style.backgroundColor = "white";
+		}
+	</script>
 </body>
 </html>
